@@ -1,8 +1,3 @@
-Certainly! Here's a fully written README for your "PureView" image processing application hosted on GitHub, tailored to the details of your repository and project:
-
-### README.md
-
-```markdown
 # PureView - Image Processing App
 
 Welcome to PureView, your destination for advanced image enhancement. This application leverages state-of-the-art technology to improve the quality of images by automatically detecting and correcting various types of blur. Users can also manually adjust contrast, sharpness, and brightness to give their images that professional sheen.
