@@ -1,40 +1,25 @@
 import streamlit as st
+from ui_components import setup_page, upload_and_display_image, feedback_form, show_homepage
 
-# Configure your page
-st.set_page_config(page_title="PureView - Image Processing App", page_icon=":camera:", layout="wide")
+def main():
+    setup_page()
 
-# A simple navigation system
-st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ('Home', 'Upload and Deblur', 'Further Enhancements', 'Educational Section'))
+    # Initialize or access existing state
+    if 'deblur_started' not in st.session_state:
+        st.session_state['deblur_started'] = False
 
-if page == 'Upload and Deblur':
-    # Dynamic import of the upload and deblur script
-    from pages import upload_and_deblur
-elif page == 'Further Enhancements':
-    # Dynamic import of the further enhancements script
-    from pages import enhancements
-elif page == 'Educational Section':
-    # Dynamic import of the educational section script
-    from pages import educational
+    if not st.session_state['deblur_started']:
+        # Display the homepage with a button to start deblurring
+        show_homepage()
+        if st.button("Start Deblurring"):
+            st.session_state['deblur_started'] = True
+            # This will cause the app to rerun and the next part of the code will execute
 
-def show_homepage():
-    """Displays the homepage content."""
-    st.title('Welcome to PureView!')
-    st.header('Your go-to app for image deblurring and enhancement.')
+    # Once deblurring has started, handle image upload and processing
+    if st.session_state['deblur_started']:
+        original_image, blur_type = upload_and_display_image()
+        if original_image is not None and blur_type is not None:
+            feedback_form()
 
-    st.markdown("""
-    PureView is designed to help photographers and photography enthusiasts improve their images. 
-    Whether you're dealing with motion blur, defocus, or just want to enhance the overall sharpness and contrast, PureView has got you covered.
-    
-    **Features include:**
-    - **Upload and Deblur:** Automatically detect and correct various types of blur in your images.
-    - **Further Enhancements:** Adjust contrast, sharpness, and brightness to give your images that professional look.
-    - **Educational Section:** Learn about different types of blur and how to prevent them, enhancing your photography skills.
-    
-    Get started by choosing an option from the sidebar. Happy enhancing!
-    """)
-
-    st.image('https://via.placeholder.com/800x400?text=PureView+Example', caption='Example Image Processed by PureView')
-
-# Call the function to display the homepage
-show_homepage()
+if __name__ == "__main__":
+    main()
