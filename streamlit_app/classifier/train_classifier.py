@@ -1,8 +1,8 @@
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 from classify_predict import predict_image_class
 from classifier_model import build_model
 from data_loader import load_images
-from tensorflow.keras.callbacks import EarlyStopping, CSVLogger
+from keras.callbacks import EarlyStopping, CSVLogger
 
 csv_logger = CSVLogger('training_log25.csv', append=True, separator=';')
 

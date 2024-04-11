@@ -1,7 +1,7 @@
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 import numpy as np
 from PIL import Image
-from tensorflow.keras.preprocessing.image import img_to_array
+from keras.preprocessing.image import img_to_array
 
 def predict_image_class(img_path):
     # Load trained model

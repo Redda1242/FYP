@@ -1,9 +1,10 @@
 from tensorflow import keras
 from keras import layers, regularizers
+import keras_tuner as kt
 from keras_tuner.tuners import Hyperband
 from images_loader import load_images
 from defocus_deblurer import build_enhanced_model
-from tensorflow.keras.callbacks import EarlyStopping
+from keras.callbacks import EarlyStopping
 
 # Load your datasets
 x_train = load_images('dataset/defocused_blurred')  

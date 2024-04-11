@@ -1,7 +1,7 @@
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization
-from tensorflow.keras.regularizers import l2
-from tensorflow.keras.optimizers import Adam
+from keras.models import Sequential
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization
+from keras.regularizers import l2
+from keras.optimizers import Adam
 
 do1 =  0.1
 do2 = 0.15

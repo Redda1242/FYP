@@ -1,5 +1,5 @@
-from tensorflow.keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D, Add
-from tensorflow.keras.models import Model
+from keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D, Add
+from keras.models import Model
 
 def build_enhanced_model():
     input_img = Input(shape=(224, 224, 3)) 
