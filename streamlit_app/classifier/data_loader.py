@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import cv2
-from keras.utils import to_categorical
+from tensorflow.keras.utils import to_categorical
 
 def load_images(directory, size=(224, 224), num_classes=5):
     images = []

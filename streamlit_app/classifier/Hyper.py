@@ -1,22 +1,22 @@
-from keras.models import Sequential
-from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization
-from keras.regularizers import l2
-from keras.optimizers import Adam
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization
+from tensorflow.keras.regularizers import l2
+from tensorflow.keras.optimizers import Adam
 from keras_tuner import HyperModel
 from keras_tuner.tuners import RandomSearch
-from keras.callbacks import EarlyStopping, CSVLogger
+from tensorflow.keras.callbacks import EarlyStopping, CSVLogger
 from data_loader import load_images
-
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, GlobalAveragePooling2D, Dense, Dropout, BatchNormalization
+from tensorflow.keras.regularizers import l2
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras_tuner import HyperModel, RandomSearch
 csv_logger = CSVLogger('training_log27_big_dataset.csv', append=True, separator=';')
 
 #actual
 X, y = load_images('testing/dataset_test')
 
-from keras.models import Sequential
-from keras.layers import Conv2D, MaxPooling2D, GlobalAveragePooling2D, Dense, Dropout, BatchNormalization
-from keras.regularizers import l2
-from keras.optimizers import Adam
-from keras_tuner import HyperModel, RandomSearch
+
 
 class AdvancedHyperModel(HyperModel):
     def __init__(self, input_shape, num_classes):

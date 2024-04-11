@@ -1,6 +1,6 @@
 from images_loader import load_images
 from defocus_deblurer import build_enhanced_model
-from keras.callbacks import EarlyStopping
+from tensorflow.keras.callbacks import EarlyStopping
 
 # Load your datasets
 x_train = load_images('dataset/box_blurred')  
